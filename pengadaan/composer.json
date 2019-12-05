@@ -1,0 +1,7 @@
+{
+    "require": {
+        "moontoast/math": "^1.1",
+        "picqer/php-barcode-generator": "^0.3.0",
+        "endroid/qr-code": "^2.5"
+    }
+}
