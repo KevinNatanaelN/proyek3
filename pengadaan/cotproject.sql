@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2019 at 08:51 AM
+-- Generation Time: Dec 05, 2019 at 02:11 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 5.6.39
 
@@ -33,19 +33,20 @@ CREATE TABLE `barang` (
   `nama_barang` varchar(255) NOT NULL,
   `stok` int(11) NOT NULL,
   `satuan_id` int(11) NOT NULL,
-  `jenis_id` int(11) NOT NULL
+  `jenis_id` int(11) NOT NULL,
+  `keterangan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `barang`
 --
 
-INSERT INTO `barang` (`id_barang`, `nama_barang`, `stok`, `satuan_id`, `jenis_id`) VALUES
-('B000001', 'Lenovo Ideapad 1550', 15, 1, 3),
-('B000002', 'Converse', 0, 1, 4),
-('B000004', 'Mouse Wireless Logitech M220', 20, 1, 7),
-('B000005', 'Pashmina', 0, 1, 1),
-('B000006', 'Sepatu Pantopel', 0, 1, 4);
+INSERT INTO `barang` (`id_barang`, `nama_barang`, `stok`, `satuan_id`, `jenis_id`, `keterangan`) VALUES
+('B000001', 'Lenovo Ideapad 1550', 15, 1, 3, ''),
+('B000002', 'Converse', 0, 1, 4, ''),
+('B000004', 'Mouse Wireless Logitech M220', 20, 1, 7, ''),
+('B000005', 'Pashmina', 0, 1, 1, ''),
+('B000006', 'Sepatu Pantopel', 0, 1, 4, '');
 
 -- --------------------------------------------------------
 
@@ -121,19 +122,15 @@ CREATE TABLE `customer` (
   `id_customer` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `notlp` varchar(20) NOT NULL,
-  `namabarang_id` int(11) NOT NULL,
-  `jenisbarang_id` int(11) NOT NULL,
-  `jumlah` int(11) NOT NULL,
-  `tanggal_sewa` date NOT NULL
+  `notlp` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `customer`
 --
 
-INSERT INTO `customer` (`id_customer`, `nama`, `email`, `notlp`, `namabarang_id`, `jenisbarang_id`, `jumlah`, `tanggal_sewa`) VALUES
-(1, 'Budi', 'budi@gmail.com', '08512346587', 0, 0, 0, '2019-12-03');
+INSERT INTO `customer` (`id_customer`, `nama`, `email`, `notlp`) VALUES
+(1, 'Budi', 'budi@gmail.com', '08512346587');
 
 -- --------------------------------------------------------
 
@@ -259,9 +256,7 @@ ALTER TABLE `barang_masuk`
 -- Indexes for table `customer`
 --
 ALTER TABLE `customer`
-  ADD PRIMARY KEY (`id_customer`),
-  ADD KEY `id_barang1` (`namabarang_id`) USING BTREE,
-  ADD KEY `id_jenisbarang` (`jenisbarang_id`) USING BTREE;
+  ADD PRIMARY KEY (`id_customer`);
 
 --
 -- Indexes for table `jenis`
