@@ -11,7 +11,7 @@
             <div class="box-body">
             <?php
             $generator = new \Picqer\Barcode\BarcodeGeneratorPNG();
-            echo '<img src="data:image/png;base64,' . base64_encode($generator->getBarcode($barang->id_barang , $generator::TYPE_CODE_128)) . '">';
+            echo '<img src="data:image/png;base64,' . base64_encode($generator->getBarcode('$barang->id_barang' , $generator::TYPE_CODE_128)) . '">';
                 ?>
                 <br>
             </div>
@@ -32,8 +32,8 @@
 
             <div class="box-body">
             <?php
-             $qrCode = new Endroid\QrCode\QrCode('Life is too short to be generating QR codes');
-             $qrCode->writeFile( 'uploads/qrcode/item-'.$row->id_barang.'.png');
+             $qrCode = new Endroid\QrCode\QrCode('keterangan barang');
+             $qrCode->writeFile( 'qr.png');
                 ?>
                 <img src="">
                 <br>
