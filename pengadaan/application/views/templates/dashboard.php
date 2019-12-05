@@ -73,6 +73,14 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link pb-0" href="<?= base_url('customer'); ?>">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Customer</span>
+                </a>
+            </li>
+
+            
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed " href="#" data-toggle="collapse" data-target="#collapseMaster" aria-expanded="true" aria-controls="collapseMaster">
@@ -104,6 +112,14 @@
                     <span>Barang Masuk</span>
                 </a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link pb-0" href="<?= base_url('penyimpanan'); ?>">
+                    <i class="fas fa-fw fa-warehouse"></i>
+                    <span>Penyimpanan</span>
+                </a>
+            </li>
+
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
